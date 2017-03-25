@@ -61,9 +61,7 @@ class PuyoListener implements KeyListener, WindowListener
 	 * Invoked when a window has been closed as the result of calling dispose on the window.
 	 */
 	public void windowClosed(WindowEvent e)
-       	{
-		PuyoGameState.setGameState(PuyoGameState.FINISHED);
-		e.getWindow().dispose();
+    {
 	}
 
 
@@ -100,7 +98,10 @@ class PuyoListener implements KeyListener, WindowListener
 	/**
 	 *  Invoked when the user attempts to close the window from the window's system menu.
 	 */
-	public void windowClosing(WindowEvent e) {}
+	public void windowClosing(WindowEvent e) {
+		PuyoGameState.setGameState(PuyoGameState.FINISHED);
+		e.getWindow().dispose();
+	}
 
 
 }

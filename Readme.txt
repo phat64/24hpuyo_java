@@ -1,4 +1,4 @@
-Le projet a été réaliser en 3 semaines (avec 1 semaine de finalisation).
+Le projet a été réalisé en tres peu de temps et date de plus de 10 ans.
 
 Au niveau du jeu, le projet contient :
 - des animations d'intro, de fin, d'update de score, de passage vers des puyos suivants
@@ -14,10 +14,10 @@ Au niveau du code, on retrouve :
 - un découpage en plusieurs classes (Puyo est un élement graphique, PuyoGfx contient les FX, PuyoAction sont les actions possibles, PuyoGAmeControls gére les inputs avec une notion de degrée pression comme sur console, PuyoFont gére la font avec un style 24h chrono, ...)
 
 Au niveau du scénario :
-- Jack Bauer doit déjoué l'attaque des puyos mais la technologie actuelle ne permet pas de les stopper.
+- Jack Bauer doit déjouer l'attaque des puyos mais la technologie actuelle ne permet pas de les stopper.
 - Jack est obligé de retourner dans le passé et d'utilisé une vielle machine des années 70 (à J-1 de la date Epoch) pour avoir une chance de sauver le monde
 - Il n'a que 24 heures... Le compte à rebours a déjà commencé! 
 
-ps : le jeu fonctionne sans probleme sur mon Pentium III 500Mhz mais possede des problemes sur le chargement des ressources avec les machines virtuelles java actuelles
+ps : le jeu fonctionnait sans probleme sur mon Pentium III 500Mhz mais possede des problemes sur le chargement des ressources au debut de la partie. ca arrive qu'une des images des puyos n'affiche. Il faudra investigure ca
 
 Mustapha Tachouct 

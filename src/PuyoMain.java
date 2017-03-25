@@ -26,51 +26,9 @@ public class PuyoMain // implements WindowAdapter
 	{
 		PuyoGameState.setGameState(PuyoGameState.STARTED);
 		
-		while (PuyoGameState.nextGameState() >= 0)
+		while (PuyoGameState.getGameState() >= 0)
 		{
-
-		}
-	}
-
-	private static void init()
-	{
-		try
-	       	{
-			System.setProperty("sun.java2d.opengl", "True");
-			PuyoRessources.init();
-		}
-		catch(Exception ex)
-		{
-			ex.printStackTrace();
-			System.exit(-1);
-		}
-
-		PuyoGameScreen.start();
-		PuyoGameControls.start();
-		//PuyoTime.start();
-
-	}
-
-
-	private static void exit()
-	{
-		System.out.println(Runtime.getRuntime().freeMemory());
-		System.out.println("bye !!!");
-		PuyoGameScreen.stop();
-		PuyoGameControls.stop();
-		//f.dispose();
-		System.exit(0);
-	}
-
-	private static void sleep(long ms)
-	{
-		try
-		{
-			Thread.sleep(ms);
-		}
-		catch(Exception ex)
-		{
-			// do nothing :-)
+			PuyoGameState.nextGameState();
 		}
 	}
 }

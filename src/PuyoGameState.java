@@ -18,7 +18,7 @@
 public class PuyoGameState
 {
 	// the states informations
-	private static int gs = 10;
+	private static int gs = PuyoGameState.STARTED;
 	private static int level = 0;
 	private static int score = 0;
 
@@ -118,9 +118,17 @@ public class PuyoGameState
 
 			case FINISHED:
 			{
-				// free the ressources (and exit)
+				// Stops Threads, free the ressources (and exit)
 				PuyoGameScreen.stop();
 				PuyoGameControls.stop();
+				PuyoLevel.stop();
+				PuyoScore.stop();
+				PuyoTime.stop();
+
+				try {
+					Thread.sleep(400);
+				} catch(Exception e){}
+				
 				PuyoRessources.free();
 				System.exit(0);
 				break;
@@ -204,8 +212,9 @@ public class PuyoGameState
 	}
 
 	static synchronized int nextGameState()
-	{
-		switch(gs)
+	{ 
+		int state = getGameState();
+		switch(state)
 		{
 			case STARTED:
 			{
@@ -236,6 +245,7 @@ public class PuyoGameState
 			case FINISHED:
 			{
 				// ??? exit
+				System.exit(0);
 				break;
 			}
 			case LEVEL_STARTED:
@@ -447,6 +457,9 @@ static Puyo next2 = new Puyo(next1);
 					p2.reset(true);
 
 				}
+				
+				if (getGameState() == FINISHED)
+					end = true;
 			}
 
 			PuyoGfx.drawExplosionAnimation();
